@@ -1,0 +1,389 @@
+*{
+    margin:0px;
+    padding : 0px;
+    box-sizing :border-box;
+}
+
+.header {
+    height: 60px;
+    background-color: #2d423d;   /* dark gray */
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    gap: 16px;
+}
+
+.login-btn {
+    background-color: #c85c2e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    height: 34px;
+    text-decoration: none;  /* underline hatao */
+    display: inline-flex;
+    align-items: center;
+}
+
+.login-btn:hover {
+    background-color: #b85c00;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hamburger {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+.create-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #ede8da;
+    color: #2b2118;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 14px;
+    font-weight:bolder;
+    cursor: pointer;
+    height: 34px;
+}
+.search-box{
+flex: 1;
+display : flex;
+justify-content: center;
+}
+.search-box input {
+    width: 500px;
+    height: 36px;
+    border-radius: 20px;
+    background-color: #ede8da;
+    color: #2b2118;
+    border: none;
+    padding: 0px 20px;
+    font-size: 15px;
+    outline: none;
+}
+.search-box input::placeholder{
+    color : #2b2b2b;
+}
+.main-container{
+    border :2px solid black;
+    display:flex;
+}
+.left-dashboard aside{
+   width: 220px;
+    background-color: #2d423d;
+    padding: 12px 8px;
+    height: 100%;
+    min-height: 100vh;
+    color:#2b2118;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #c8c9d4;
+    font-size: 14px;
+    padding: 9px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.nav-item:hover {
+    background-color: #2d2e40;
+    color: white;
+}
+
+.nav-item.active {
+    color: #c8c9d4;
+    font-weight: 600;
+}
+
+.nav-section-label {
+    color: #6b6c7e;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 14px 14px 6px;
+    text-transform: uppercase;
+}
+
+.content{
+    flex:1;
+    padding : 40px;
+    flex-direction: column;
+    padding: 40px;
+    height: calc(100vh - 70px);
+    background-color: #ede8da;
+}
+
+.top-bar{
+display : flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.date{
+    color :#c85c2e;
+    margin-bottom: 15px;
+    font-size:18px;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+
+.controls button {
+    border: 1px solid #ddd;
+    background-color:#c85c2e;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    color:white;
+}
+
+.cards {
+    flex: 1;                  
+    display: flex;
+    gap: 20px;
+}   
+
+.card {
+    flex: 1;                
+    background : linear-gradient(135deg , #f5eada,#eadbc8);
+    border-radius: 16px;
+    border: 1px solid #Dfd3c3;
+    box-shadow: 0 10px 30px rgb(158, 181, 110);
+    padding: 25px;
+}
+
+.card-header{
+    display:flex;
+     display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.avatar{
+    display:flex;
+    background-color: #c85c2e;
+    border-radius: 50%;
+    color :white;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    padding:18px;
+    font-size :14px;
+    font-weight:bold;
+    flex-shrink: 0;
+}
+
+.card-title{
+    font-size : 18px;
+    font-weight: 900px;
+    display:flex;
+    align-items: center;
+    gap :6px;
+    color : #3e86ec;
+    border:none;
+    cursor:pointer;
+     background : linear-gradient(135deg , #f5eada,#eadbc8);
+}
+
+
+.tabs{
+    display:flex;
+    gap : 14/px;
+     border-bottom: 1px solid #eee;
+      margin-bottom: 16px;
+}
+
+.tab{
+    font-size:14px;
+    padding-bottom :10px;
+    color:#888;
+}
+
+
+
+.create-task{
+    font-size : 14px;
+    color:  #555;
+    padding:8px ;
+}
+
+.task-name{
+    border-bottom: 2px solid #ddd;
+}
+.create-class{
+    color:#2b2118;
+}
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.task-check {
+    font-size: 18px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.task-name {
+    flex: 1;
+    font-size: 14px;
+}
+
+.task-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.assignee {
+    background: #e8e8e8;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    color: #555;
+}
+
+.due-date {
+    font-size: 12px;
+    color: #888;
+}
+
+.due-date.overdue {
+    color: chocolate;
+    font-weight: 500;
+}
+
+.projects-title {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.recents-btn {
+    font-size: 13px;
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #444;
+}
+
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+}
+
+.project-icon-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px dashed #aaa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #aaa;
+    flex-shrink: 0;
+}
+
+.project-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #555;
+    flex-shrink: 0;
+}
+
+.project-name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.project-sub {
+    font-size: 13px;
+    color: #888;
+    margin-top: 2px;
+}
+
+
+
+.work-section {
+    margin-top: 8px;
+}
+
+.work-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: darkgray;
+    font-size: 13px;
+    padding: 6px 12px;
+}
+
+.plus-btn {
+    cursor: pointer;
+    font-size: 18px;
+    color: #aaa;
+}
+
+.sidebar-project {
+    display: flex;
+    align-items: center;
+    color: #e3e3e3;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    height: 36px;
+    cursor: pointer;
+    gap: 8px;
+}
+
+
+
+

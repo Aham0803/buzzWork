@@ -1,0 +1,229 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .bw { display: flex; height: 620px; font-size: 13px; border-radius: var(--border-radius-lg); overflow: hidden; border: 0.5px solid var(--color-border-tertiary); }
+
+  .bw-sidebar { width: 220px; background: #1a1a2e; display: flex; flex-direction: column; flex-shrink: 0; }
+  .bw-sidebar-top { padding: 14px 12px 10px; border-bottom: 1px solid #2a2a40; }
+  .bw-logo { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 15px; font-weight: 500; margin-bottom: 14px; }
+  .bw-logo-icon { width: 28px; height: 28px; background: #534AB7; border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+  .bw-create { display: flex; align-items: center; gap: 6px; background: #534AB7; color: #fff; border-radius: 20px; padding: 6px 14px; font-size: 12px; font-weight: 500; cursor: pointer; width: fit-content; }
+  .bw-nav { padding: 10px 8px; flex: 1; overflow: auto; }
+  .bw-nav-section { font-size: 10px; color: #6b6b8a; letter-spacing: 0.08em; text-transform: uppercase; padding: 10px 8px 4px; }
+  .bw-nav-item { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; color: #a0a0c0; cursor: pointer; font-size: 12px; }
+  .bw-nav-item:hover { background: #2a2a40; }
+  .bw-nav-item.active { background: #2a2a40; color: #fff; }
+  .bw-nav-item i { font-size: 15px; }
+  .bw-nav-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .bw-sidebar-bottom { padding: 12px; border-top: 1px solid #2a2a40; }
+  .bw-trial { background: #2a2a40; border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+  .bw-trial-title { color: #a0a0c0; font-size: 11px; font-weight: 500; }
+  .bw-trial-sub { color: #6b6b8a; font-size: 10px; margin-top: 2px; }
+  .bw-user { display: flex; align-items: center; gap: 8px; color: #a0a0c0; font-size: 12px; }
+  .bw-avatar { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; flex-shrink: 0; }
+
+  .bw-main { flex: 1; display: flex; flex-direction: column; background: var(--color-background-primary); min-width: 0; }
+  .bw-topbar { padding: 14px 20px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .bw-project-row { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .bw-project-name { font-size: 16px; font-weight: 500; color: var(--color-text-primary); }
+  .bw-tabs { display: flex; gap: 0; }
+  .bw-tab { padding: 8px 14px; font-size: 12px; color: var(--color-text-secondary); cursor: pointer; border-bottom: 2px solid transparent; }
+  .bw-tab.active { color: #534AB7; border-bottom: 2px solid #534AB7; font-weight: 500; }
+  .bw-toolbar { display: flex; align-items: center; gap: 8px; padding: 10px 20px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .bw-add-btn { display: flex; align-items: center; gap: 5px; background: #534AB7; color: #fff; border: none; border-radius: 6px; padding: 6px 12px; font-size: 12px; font-weight: 500; cursor: pointer; }
+  .bw-filter-btn { display: flex; align-items: center; gap: 5px; color: var(--color-text-secondary); font-size: 12px; padding: 5px 10px; border: 0.5px solid var(--color-border-tertiary); border-radius: 6px; cursor: pointer; background: transparent; }
+  .bw-spacer { flex: 1; }
+
+  .bw-content { flex: 1; overflow: auto; }
+  .bw-table-header { display: grid; grid-template-columns: 1fr 140px 140px 110px 110px 30px; padding: 8px 20px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .bw-table-header span { font-size: 11px; color: var(--color-text-tertiary); font-weight: 500; }
+
+  .bw-section-header { display: flex; align-items: center; gap: 8px; padding: 10px 20px 6px; cursor: pointer; }
+  .bw-section-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .bw-section-count { font-size: 11px; color: var(--color-text-tertiary); }
+
+  .bw-task-row { display: grid; grid-template-columns: 1fr 140px 140px 110px 110px 30px; padding: 8px 20px; border-bottom: 0.5px solid var(--color-border-tertiary); align-items: center; cursor: pointer; }
+  .bw-task-row:hover { background: var(--color-background-secondary); }
+  .bw-task-row.highlight { background: #f0eeff; }
+  .bw-task-name { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--color-text-primary); }
+  .bw-check { width: 16px; height: 16px; border: 1.5px solid var(--color-border-secondary); border-radius: 50%; flex-shrink: 0; }
+  .bw-assignee { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--color-text-secondary); }
+  .bw-date { font-size: 12px; color: var(--color-text-secondary); }
+  .bw-date.overdue { color: #D85A30; }
+  .bw-badge { font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; display: inline-block; }
+  .bw-add-task { padding: 8px 20px 8px 56px; font-size: 12px; color: var(--color-text-tertiary); cursor: pointer; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .bw-add-task:hover { color: #534AB7; }
+</style>
+
+<div class="bw">
+  <div class="bw-sidebar">
+    <div class="bw-sidebar-top">
+      <div class="bw-logo">
+        <div class="bw-logo-icon"><i class="ti ti-bolt" style="font-size:16px;color:#fff;" aria-hidden="true"></i></div>
+        BuzzWork
+      </div>
+      <div class="bw-create"><i class="ti ti-plus" style="font-size:14px;" aria-hidden="true"></i> Create</div>
+    </div>
+
+    <div class="bw-nav">
+      <div class="bw-nav-item active"><i class="ti ti-home" aria-hidden="true"></i> Home</div>
+      <div class="bw-nav-item"><i class="ti ti-inbox" aria-hidden="true"></i> Inbox</div>
+      <div class="bw-nav-item"><i class="ti ti-checkbox" aria-hidden="true"></i> My tasks</div>
+
+      <div class="bw-nav-section">Workspace</div>
+      <div class="bw-nav-item"><i class="ti ti-chart-bar" aria-hidden="true"></i> Dashboard</div>
+      <div class="bw-nav-item"><i class="ti ti-layout-kanban" aria-hidden="true"></i> Projects</div>
+      <div class="bw-nav-item"><i class="ti ti-users" aria-hidden="true"></i> People</div>
+      <div class="bw-nav-item"><i class="ti ti-folder" aria-hidden="true"></i> Portfolios</div>
+
+      <div class="bw-nav-section">My Projects</div>
+      <div class="bw-nav-item active">
+        <div class="bw-nav-dot" style="background:#534AB7;"></div> Website Revamp
+      </div>
+      <div class="bw-nav-item">
+        <div class="bw-nav-dot" style="background:#1D9E75;"></div> App v2.0
+      </div>
+      <div class="bw-nav-item">
+        <div class="bw-nav-dot" style="background:#D85A30;"></div> Marketing Q3
+      </div>
+    </div>
+
+    <div class="bw-sidebar-bottom">
+      <div class="bw-trial">
+        <div class="bw-trial-title">Free plan — 5 projects</div>
+        <div class="bw-trial-sub">Upgrade for unlimited access</div>
+      </div>
+      <div class="bw-user">
+        <div class="bw-avatar" style="background:#534AB7;color:#fff;">RK</div>
+        Rahul Kumar
+      </div>
+    </div>
+  </div>
+
+  <div class="bw-main">
+    <div class="bw-topbar">
+      <div class="bw-project-row">
+        <i class="ti ti-layout-list" style="font-size:18px;color:var(--color-text-secondary);" aria-hidden="true"></i>
+        <span class="bw-project-name">Website Revamp</span>
+        <i class="ti ti-chevron-down" style="font-size:14px;color:var(--color-text-tertiary);" aria-hidden="true"></i>
+        <i class="ti ti-star" style="font-size:14px;color:var(--color-text-tertiary);" aria-hidden="true"></i>
+        <span style="font-size:12px;color:var(--color-text-tertiary);margin-left:4px;">Set status</span>
+        <div style="flex:1;"></div>
+        <div class="bw-avatar" style="background:#534AB7;color:#fff;width:28px;height:28px;font-size:11px;">RK</div>
+        <button style="background:#534AB7;color:#fff;border:none;border-radius:6px;padding:5px 12px;font-size:12px;font-weight:500;cursor:pointer;">Share</button>
+        <button style="background:transparent;color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:6px;padding:5px 12px;font-size:12px;cursor:pointer;">Customize</button>
+      </div>
+      <div class="bw-tabs">
+        <div class="bw-tab">Overview</div>
+        <div class="bw-tab active">List</div>
+        <div class="bw-tab">Board</div>
+        <div class="bw-tab">Timeline</div>
+        <div class="bw-tab">Dashboard</div>
+        <div class="bw-tab">Calendar</div>
+        <div class="bw-tab"><i class="ti ti-plus" style="font-size:13px;" aria-hidden="true"></i></div>
+      </div>
+    </div>
+
+    <div class="bw-toolbar">
+      <button class="bw-add-btn"><i class="ti ti-plus" style="font-size:13px;" aria-hidden="true"></i> Add task</button>
+      <div style="flex:1;"></div>
+      <button class="bw-filter-btn"><i class="ti ti-filter" style="font-size:13px;" aria-hidden="true"></i> Filter</button>
+      <button class="bw-filter-btn"><i class="ti ti-arrows-sort" style="font-size:13px;" aria-hidden="true"></i> Sort</button>
+      <button class="bw-filter-btn"><i class="ti ti-layout-rows" style="font-size:13px;" aria-hidden="true"></i> Group</button>
+      <button class="bw-filter-btn"><i class="ti ti-search" style="font-size:13px;" aria-hidden="true"></i></button>
+    </div>
+
+    <div class="bw-content">
+      <div class="bw-table-header">
+        <span>Name</span>
+        <span>Assignee</span>
+        <span>Due date</span>
+        <span>Priority</span>
+        <span>Status</span>
+        <span></span>
+      </div>
+
+      <!-- To Do section -->
+      <div class="bw-section-header">
+        <i class="ti ti-chevron-down" style="font-size:13px;color:var(--color-text-tertiary);" aria-hidden="true"></i>
+        <span class="bw-section-title">To do</span>
+        <span class="bw-section-count">3</span>
+      </div>
+
+      <div class="bw-task-row">
+        <div class="bw-task-name"><div class="bw-check"></div> Homepage redesign</div>
+        <div class="bw-assignee"><div class="bw-avatar" style="background:#534AB7;color:#fff;width:22px;height:22px;font-size:10px;">RK</div> Rahul K.</div>
+        <div class="bw-date">Jun 20 – 25</div>
+        <div><span class="bw-badge" style="background:#E1F5EE;color:#085041;">Low</span></div>
+        <div><span class="bw-badge" style="background:#E1F5EE;color:#085041;">On track</span></div>
+      </div>
+
+      <div class="bw-task-row highlight">
+        <div class="bw-task-name"><div class="bw-check"></div> SEO audit report</div>
+        <div class="bw-assignee"><div class="bw-avatar" style="background:#1D9E75;color:#fff;width:22px;height:22px;font-size:10px;">AS</div> Ankit S.</div>
+        <div class="bw-date">Today – Jun 22</div>
+        <div><span class="bw-badge" style="background:#FAEEDA;color:#633806;">Medium</span></div>
+        <div><span class="bw-badge" style="background:#FAEEDA;color:#633806;">At risk</span></div>
+      </div>
+
+      <div class="bw-task-row">
+        <div class="bw-task-name"><div class="bw-check"></div> Mobile nav component</div>
+        <div class="bw-assignee"><div class="bw-avatar" style="background:#D85A30;color:#fff;width:22px;height:22px;font-size:10px;">PM</div> Priya M.</div>
+        <div class="bw-date overdue">Jun 18 – 20</div>
+        <div><span class="bw-badge" style="background:#FCEBEB;color:#791F1F;">High</span></div>
+        <div><span class="bw-badge" style="background:#FCEBEB;color:#791F1F;">Off track</span></div>
+      </div>
+
+      <div class="bw-add-task">+ Add task...</div>
+
+      <!-- Doing section -->
+      <div class="bw-section-header">
+        <i class="ti ti-chevron-down" style="font-size:13px;color:var(--color-text-tertiary);" aria-hidden="true"></i>
+        <span class="bw-section-title">Doing</span>
+        <span class="bw-section-count">2</span>
+      </div>
+
+      <div class="bw-task-row">
+        <div class="bw-task-name"><div class="bw-check" style="border-color:#534AB7;"></div> Auth flow — login page</div>
+        <div class="bw-assignee"><div class="bw-avatar" style="background:#534AB7;color:#fff;width:22px;height:22px;font-size:10px;">RK</div> Rahul K.</div>
+        <div class="bw-date">Jun 17 – 21</div>
+        <div><span class="bw-badge" style="background:#FAEEDA;color:#633806;">Medium</span></div>
+        <div><span class="bw-badge" style="background:#E1F5EE;color:#085041;">On track</span></div>
+      </div>
+
+      <div class="bw-task-row">
+        <div class="bw-task-name"><div class="bw-check" style="border-color:#534AB7;"></div> API integration docs</div>
+        <div class="bw-assignee"><div class="bw-avatar" style="background:#D85A30;color:#fff;width:22px;height:22px;font-size:10px;">PM</div> Priya M.</div>
+        <div class="bw-date">Jun 19 – 24</div>
+        <div><span class="bw-badge" style="background:#E6F1FB;color:#0C447C;">Low</span></div>
+        <div><span class="bw-badge" style="background:#E1F5EE;color:#085041;">On track</span></div>
+      </div>
+
+      <div class="bw-add-task">+ Add task...</div>
+
+      <!-- Done section -->
+      <div class="bw-section-header">
+        <i class="ti ti-chevron-down" style="font-size:13px;color:var(--color-text-tertiary);" aria-hidden="true"></i>
+        <span class="bw-section-title">Done</span>
+        <span class="bw-section-count">3</span>
+      </div>
+
+      <div class="bw-task-row" style="opacity:0.6;">
+        <div class="bw-task-name"><div class="bw-check" style="background:#534AB7;border-color:#534AB7;"></div> <span style="text-decoration:line-through;">Wireframes v1</span></div>
+        <div class="bw-assignee"><div class="bw-avatar" style="background:#534AB7;color:#fff;width:22px;height:22px;font-size:10px;">RK</div> Rahul K.</div>
+        <div class="bw-date">Jun 10 – 14</div>
+        <div><span class="bw-badge" style="background:#E1F5EE;color:#085041;">Low</span></div>
+        <div><span class="bw-badge" style="background:#EAF3DE;color:#27500A;">Complete</span></div>
+      </div>
+
+      <div class="bw-task-row" style="opacity:0.6;">
+        <div class="bw-task-name"><div class="bw-check" style="background:#534AB7;border-color:#534AB7;"></div> <span style="text-decoration:line-through;">Project kickoff meeting</span></div>
+        <div class="bw-assignee"><div class="bw-avatar" style="background:#1D9E75;color:#fff;width:22px;height:22px;font-size:10px;">AS</div> Ankit S.</div>
+        <div class="bw-date">Jun 8</div>
+        <div><span class="bw-badge" style="background:#E1F5EE;color:#085041;">Low</span></div>
+        <div><span class="bw-badge" style="background:#EAF3DE;color:#27500A;">Complete</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
