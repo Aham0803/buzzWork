@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolios</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="left-section">
+      <button class="create-btn">Create</button>
+    </div>
+    <div class="search-box">
+      <input type="search" placeholder="Search" />
+    </div>
+    <a href="login2.html" class="login-btn">Login</a>
+  </header>
+
+  <div class="main-container">
+    <div class="left-dashboard">
+      <aside>
+        <nav class="sidebar-nav">
+          <a href="home.html" class="nav-item">Home</a>
+          <a href="dashboard.html" class="nav-item">Dashboard</a>
+          <a href="inbox.html" class="nav-item">Kanban Board</a>
+          <a href="MyTask.html" class="nav-item">My Tasks</a>
+
+          <div class="nav-section-label">WORKSPACE</div>
+
+          <a href="projects.html" class="nav-item">Projects</a>
+          <a href="people.html" class="nav-item">People</a>
+          <a href="portfolios.html" class="nav-item active">Portfolios</a>
+        </nav>
+      </aside>
+    </div>
+
+    <div class="right-content">
+
+      <div class="page-head">
+        <div>
+          <h1>Portfolios</h1>
+          <p class="subtitle">High-level view across all projects</p>
+        </div>
+      </div>
+
+      <div class="metrics-grid" style="grid-template-columns: repeat(3, 1fr); margin-bottom: 18px;">
+        <div class="metric-card">
+          <div class="label">Active projects</div>
+          <div class="value">3</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Avg completion</div>
+          <div class="value accent-blue">62%</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">At risk</div>
+          <div class="value accent-orange">1</div>
+        </div>
+      </div>
+
+      <div class="portfolio-table">
+
+        <div class="table-head">
+          <div>Project</div>
+          <div>Progress</div>
+          <div>Owner</div>
+          <div>Health</div>
+        </div>
+
+        <div class="table-row">
+          <div class="task-name">Website redesign</div>
+          <div class="mini-progress">
+            <div class="bar"><div class="fill" style="width:57%;"></div></div>
+            <span class="pct">57%</span>
+          </div>
+          <div class="task-meta">Aditya K.</div>
+          <div><span class="badge badge-done">On track</span></div>
+        </div>
+
+        <div class="table-row">
+          <div class="task-name">Backend API</div>
+          <div class="mini-progress">
+            <div class="bar"><div class="fill" style="width:30%;"></div></div>
+            <span class="pct">30%</span>
+          </div>
+          <div class="task-meta">Priya J.</div>
+          <div><span class="badge badge-risk">At risk</span></div>
+        </div>
+
+        <div class="table-row">
+          <div class="task-name">Marketing launch</div>
+          <div class="mini-progress">
+            <div class="bar"><div class="fill" style="width:100%;"></div></div>
+            <span class="pct">100%</span>
+          </div>
+          <div class="task-meta">Manav N.</div>
+          <div><span class="badge badge-done">Complete</span></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

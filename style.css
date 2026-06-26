@@ -1,34 +1,32 @@
-*{
-    margin:0px;
-    padding : 0px;
-    box-sizing :border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background-color: #f6f3ea;
+}
+
+/* ======================================================
+   HEADER
+   ====================================================== */
 
 .header {
     height: 60px;
-    background-color: #2d423d;   /* dark gray */
+    background-color: #1f3530;
     display: flex;
     align-items: center;
     padding: 0px 20px;
     gap: 16px;
 }
 
-.login-btn {
-    background-color: #c85c2e;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 6px 18px;
-    font-size: 14px;
-    cursor: pointer;
-    height: 34px;
-    text-decoration: none;  /* underline hatao */
-    display: inline-flex;
-    align-items: center;
-}
-
-.login-btn:hover {
-    background-color: #b85c00;
+.brand {
+    color: #f6f3ea;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
 }
 
 .left-section {
@@ -37,55 +35,75 @@
     gap: 12px;
 }
 
-.hamburger {
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
 .create-btn {
     display: flex;
     align-items: center;
     gap: 6px;
     background-color: #ede8da;
-    color: #2b2118;
+    color: #1f2b27;
     border: none;
     border-radius: 20px;
     padding: 6px 14px;
     font-size: 14px;
-    font-weight:bolder;
+    font-weight: bold;
     cursor: pointer;
     height: 34px;
 }
-.search-box{
-flex: 1;
-display : flex;
-justify-content: center;
+
+.search-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
+
 .search-box input {
     width: 500px;
     height: 36px;
     border-radius: 20px;
-    background-color: #ede8da;
-    color: #2b2118;
+    background-color: #2a4540;
+    color: #f6f3ea;
     border: none;
     padding: 0px 20px;
     font-size: 15px;
     outline: none;
 }
-.search-box input::placeholder{
-    color : #2b2b2b;
+
+.search-box input::placeholder {
+    color: #9fb3ad;
 }
-.main-container{
-    border :2px solid black;
-    display:flex;
+
+.login-btn {
+    background-color: #d97b3f;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-size: 14px;
+    cursor: pointer;
+    height: 34px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
 }
-.left-dashboard aside{
-   width: 220px;
-    background-color: #2d423d;
+
+.login-btn:hover {
+    background-color: #c4682f;
+}
+
+/* ======================================================
+   MAIN LAYOUT (sidebar + content)
+   ====================================================== */
+
+.main-container {
+    display: flex;
+}
+
+.left-dashboard aside {
+    width: 220px;
+    background-color: #1f3530;
     padding: 12px 8px;
     height: 100%;
     min-height: 100vh;
-    color:#2b2118;
 }
 
 .sidebar-nav {
@@ -98,7 +116,7 @@ justify-content: center;
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #c8c9d4;
+    color: #a9c2bb;
     font-size: 14px;
     padding: 9px 14px;
     border-radius: 8px;
@@ -108,17 +126,18 @@ justify-content: center;
 }
 
 .nav-item:hover {
-    background-color: #2d2e40;
-    color: white;
+    background-color: #2a4540;
+    color: #f6f3ea;
 }
 
 .nav-item.active {
-    color: #c8c9d4;
+    background-color: #2a4540;
+    color: #f6f3ea;
     font-weight: 600;
 }
 
 .nav-section-label {
-    color: #6b6c7e;
+    color: #6f8a82;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.08em;
@@ -126,264 +145,579 @@ justify-content: center;
     text-transform: uppercase;
 }
 
-.content{
-    flex:1;
-    padding : 40px;
-    flex-direction: column;
-    padding: 40px;
-    height: calc(100vh - 70px);
-    background-color: #ede8da;
+.right-content {
+    flex: 1;
+    background-color: #f6f3ea;
+    min-height: 100vh;
+    padding: 28px 32px;
 }
 
-.top-bar{
-display : flex;
-justify-content: space-between;
-align-items: center;
-}
-
-.date{
-    color :#c85c2e;
-    margin-bottom: 15px;
-    font-size:18px;
-}
-
-.controls {
+.page-head {
     display: flex;
-    align-items: center;
-    gap: 15px;
-    background: white;
-    padding: 12px 20px;
-    border-radius: 12px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
-.controls button {
-    border: 1px solid #ddd;
-    background-color:#c85c2e;
-    padding: 10px 15px;
-    border-radius: 8px;
-    cursor: pointer;
-    color:white;
+.page-head h1 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1f2b27;
 }
 
-.cards {
-    flex: 1;                  
-    display: flex;
-    gap: 20px;
-}   
+.page-head .subtitle {
+    margin-top: 4px;
+    font-size: 13px;
+    color: #7a766a;
+}
 
-.card {
-    flex: 1;                
-    background : linear-gradient(135deg , #f5eada,#eadbc8);
+.primary-btn {
+    background-color: #d97b3f;
+    color: white;
+    border: none;
     border-radius: 16px;
-    border: 1px solid #Dfd3c3;
-    box-shadow: 0 10px 30px rgb(158, 181, 110);
-    padding: 25px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.card-header{
-    display:flex;
-     display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
+.primary-btn:hover {
+    background-color: #c4682f;
 }
 
-.avatar{
-    display:flex;
-    background-color: #c85c2e;
-    border-radius: 50%;
-    color :white;
-    width: 40px;
-    height: 40px;
-    justify-content: center;
-    align-items: center;
-    padding:18px;
-    font-size :14px;
-    font-weight:bold;
-    flex-shrink: 0;
+.secondary-btn {
+    background-color: #ede8da;
+    color: #1f2b27;
+    border: none;
+    border-radius: 16px;
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
 }
 
-.card-title{
-    font-size : 18px;
-    font-weight: 900px;
-    display:flex;
-    align-items: center;
-    gap :6px;
-    color : #3e86ec;
-    border:none;
-    cursor:pointer;
-     background : linear-gradient(135deg , #f5eada,#eadbc8);
+/* ======================================================
+   STATUS BADGES (shared across Kanban, My Tasks, Portfolios)
+   ====================================================== */
+
+.badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
 }
 
+.badge-todo     { background-color: #fbe3da; color: #99441d; }
+.badge-progress { background-color: #dde9f5; color: #1f5a8c; }
+.badge-done     { background-color: #dcefe2; color: #1f6b3d; }
+.badge-risk     { background-color: #fbe3da; color: #99441d; }
 
-.tabs{
-    display:flex;
-    gap : 14/px;
-     border-bottom: 1px solid #eee;
-      margin-bottom: 16px;
+/* ======================================================
+   DASHBOARD PAGE
+   ====================================================== */
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
 }
 
-.tab{
-    font-size:14px;
-    padding-bottom :10px;
-    color:#888;
+.metric-card {
+    background-color: #ede8da;
+    border-radius: 10px;
+    padding: 14px 16px;
 }
 
-
-
-.create-task{
-    font-size : 14px;
-    color:  #555;
-    padding:8px ;
+.metric-card .label {
+    font-size: 12px;
+    color: #7a766a;
 }
 
-.task-name{
-    border-bottom: 2px solid #ddd;
+.metric-card .value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1f2b27;
+    margin-top: 6px;
 }
-.create-class{
-    color:#2b2118;
+
+.value.accent-orange { color: #d97b3f; }
+.value.accent-blue   { color: #1f5a8c; }
+.value.accent-green  { color: #1f6b3d; }
+
+.dash-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
 }
-.task-item {
+
+.panel {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e9e4d4;
+    padding: 16px;
+}
+
+.panel h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2b27;
+    margin-bottom: 10px;
+}
+
+.activity-row {
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 10px 0;
-    border-bottom: 1px solid #f5f5f5;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0ede2;
+    font-size: 13px;
+    color: #1f2b27;
 }
 
-.task-check {
-    font-size: 18px;
-    color: #aaa;
-    cursor: pointer;
+.activity-row:last-child {
+    border-bottom: none;
 }
 
-.task-name {
-    flex: 1;
-    font-size: 14px;
+.activity-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
 }
 
-.task-meta {
+.dot-orange { background-color: #d97b3f; }
+.dot-blue   { background-color: #1f5a8c; }
+.dot-green  { background-color: #1f6b3d; }
+
+.deadline-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0ede2;
+    font-size: 13px;
+}
+
+.deadline-row:last-child {
+    border-bottom: none;
+}
+
+.deadline-row .due {
+    color: #99441d;
+    font-size: 12px;
+}
+
+.deadline-row .due.later {
+    color: #7a766a;
+}
+
+/* ======================================================
+   KANBAN BOARD PAGE
+   ====================================================== */
+
+.board {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    overflow-x: auto;
+}
+
+.column {
+    background-color: #ede8da;
+    border-radius: 10px;
+    width: 290px;
+    min-width: 290px;
+    padding: 14px;
+}
+
+.column-head {
     display: flex;
     align-items: center;
     gap: 8px;
+    padding: 4px 6px 14px;
 }
 
-.assignee {
-    background: #e8e8e8;
-    padding: 2px 8px;
-    border-radius: 12px;
+.column-head h2 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2b27;
+    flex: 1;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.dot-todo     { background-color: #d97b3f; }
+.dot-progress { background-color: #1f5a8c; }
+.dot-done     { background-color: #1f6b3d; }
+
+.count {
+    background-color: #d9d2bd;
+    color: #1f2b27;
     font-size: 12px;
-    color: #555;
-}
-
-.due-date {
-    font-size: 12px;
-    color: #888;
-}
-
-.due-date.overdue {
-    color: chocolate;
-    font-weight: 500;
-}
-
-.projects-title {
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.recents-btn {
-    font-size: 13px;
-    background: #f0f0f0;
-    padding: 4px 10px;
+    font-weight: 600;
+    padding: 2px 9px;
     border-radius: 20px;
-    cursor: pointer;
-    color: #444;
 }
 
-.projects-list {
+.cards {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    margin-top: 10px;
+    gap: 10px;
 }
 
-.project-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    cursor: pointer;
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 12px 14px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+    border-left: 3px solid #d97b3f;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
-.project-icon-circle {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 2px dashed #aaa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    color: #aaa;
-    flex-shrink: 0;
+.card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.13);
+    transform: translateY(-1px);
 }
 
-.project-icon-box {
-    width: 48px;
-    height: 48px;
+.card p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #1f2b27;
+}
+
+.column:nth-child(2) .card { border-left-color: #1f5a8c; }
+.column:nth-child(3) .card { border-left-color: #1f6b3d; }
+
+/* ======================================================
+   MY TASKS PAGE (table)
+   ====================================================== */
+
+.task-table {
+    background-color: #ffffff;
     border-radius: 10px;
-    background: #e8e8e8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    color: #555;
-    flex-shrink: 0;
+    border: 1px solid #e9e4d4;
+    overflow: hidden;
 }
 
-.project-name {
-    font-size: 15px;
+.task-table .table-head {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 0.8fr;
+    padding: 10px 16px;
+    background-color: #f6f3ea;
+    font-size: 12px;
+    color: #7a766a;
     font-weight: 600;
 }
 
-.project-sub {
-    font-size: 13px;
-    color: #888;
-    margin-top: 2px;
-}
-
-
-
-.work-section {
-    margin-top: 8px;
-}
-
-.work-section-header {
-    display: flex;
-    justify-content: space-between;
+.task-table .table-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 0.8fr;
+    padding: 12px 16px;
+    border-top: 1px solid #f0ede2;
     align-items: center;
-    color: darkgray;
     font-size: 13px;
-    padding: 6px 12px;
 }
 
-.plus-btn {
-    cursor: pointer;
-    font-size: 18px;
-    color: #aaa;
+.task-table .task-name { color: #1f2b27; }
+.task-table .task-meta { color: #7a766a; }
+
+/* ======================================================
+   PROJECTS PAGE
+   ====================================================== */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
 }
 
-.sidebar-project {
+.project-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e9e4d4;
+    padding: 16px;
+}
+
+.project-card .project-title {
     display: flex;
     align-items: center;
-    color: #e3e3e3;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.project-card .project-title h3 {
     font-size: 14px;
-    padding: 8px 12px;
+    font-weight: 600;
+    color: #1f2b27;
+}
+
+.project-card .project-meta {
+    font-size: 12px;
+    color: #7a766a;
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    background-color: #f0ede2;
     border-radius: 6px;
-    height: 36px;
-    cursor: pointer;
+    height: 6px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.progress-bar .fill {
+    height: 6px;
+    border-radius: 6px;
+}
+
+.avatar-group {
+    display: flex;
+}
+
+.avatar {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    margin-left: -6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.avatar:first-child {
+    margin-left: 0;
+}
+
+.avatar-teal   { background-color: #9fe1cb; color: #04342c; }
+.avatar-blue   { background-color: #85b7eb; color: #042c53; }
+.avatar-coral  { background-color: #f0997b; color: #4a1b0c; }
+.avatar-purple { background-color: #afa9ec; color: #26215c; }
+
+/* ======================================================
+   PEOPLE PAGE
+   ====================================================== */
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.person-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e9e4d4;
+    padding: 18px;
+    text-align: center;
+}
+
+.person-card .avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 14px;
+    margin: 0 auto 10px;
+    border: none;
+}
+
+.person-card .name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2b27;
+}
+
+.person-card .role {
+    font-size: 11px;
+    color: #7a766a;
+    margin-top: 3px;
+}
+
+/* ======================================================
+   PORTFOLIOS PAGE
+   ====================================================== */
+
+.portfolio-table {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e9e4d4;
+    overflow: hidden;
+}
+
+.portfolio-table .table-head {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 0.9fr;
+    padding: 10px 16px;
+    background-color: #f6f3ea;
+    font-size: 12px;
+    color: #7a766a;
+    font-weight: 600;
+}
+
+.portfolio-table .table-row {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 0.9fr;
+    padding: 12px 16px;
+    border-top: 1px solid #f0ede2;
+    align-items: center;
+    font-size: 13px;
+}
+
+.mini-progress {
+    display: flex;
+    align-items: center;
     gap: 8px;
 }
 
+.mini-progress .bar {
+    background-color: #f0ede2;
+    border-radius: 6px;
+    height: 6px;
+    width: 70px;
+    overflow: hidden;
+}
 
+.mini-progress .bar .fill {
+    height: 6px;
+    background-color: #d97b3f;
+}
 
+.mini-progress .pct {
+    font-size: 11px;
+    color: #7a766a;
+}
 
+/* ======================================================
+   HOME / LANDING PAGE
+   ====================================================== */
+
+.landing-header {
+    height: 60px;
+    background-color: #1f3530;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 32px;
+}
+
+.hero {
+    text-align: center;
+    padding: 64px 24px 40px;
+}
+
+.hero h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2b27;
+    max-width: 600px;
+    margin: 0 auto 14px;
+    line-height: 1.3;
+}
+
+.hero p {
+    font-size: 15px;
+    color: #7a766a;
+    max-width: 460px;
+    margin: 0 auto 24px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.outline-btn {
+    background-color: #ede8da;
+    color: #1f2b27;
+    border: none;
+    border-radius: 18px;
+    padding: 10px 22px;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.hero-buttons .primary-btn {
+    border-radius: 18px;
+    padding: 10px 22px;
+    font-size: 14px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 0px 60px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e9e4d4;
+    padding: 20px;
+}
+
+.feature-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.feature-card h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #1f2b27;
+    margin-bottom: 6px;
+}
+
+.feature-card p {
+    font-size: 12px;
+    color: #7a766a;
+    line-height: 1.6;
+}
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+@media (max-width: 900px) {
+    .metrics-grid,
+    .projects-grid,
+    .people-grid,
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .dash-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .board {
+        flex-direction: column;
+    }
+    .column {
+        width: 100%;
+        min-width: 0;
+    }
+    .right-content {
+        padding: 20px 16px;
+    }
+}

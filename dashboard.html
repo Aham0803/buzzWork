@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="left-section">
+      <button class="create-btn">Create</button>
+    </div>
+    <div class="search-box">
+      <input type="search" placeholder="Search" />
+    </div>
+    <a href="login2.html" class="login-btn">Login</a>
+  </header>
+
+  <div class="main-container">
+    <div class="left-dashboard">
+      <aside>
+        <nav class="sidebar-nav">
+          <a href="home.html" class="nav-item">Home</a>
+          <a href="dashboard.html" class="nav-item active">Dashboard</a>
+          <a href="inbox.html" class="nav-item">Kanban Board</a>
+          <a href="MyTask.html" class="nav-item">My Tasks</a>
+
+          <div class="nav-section-label">WORKSPACE</div>
+
+          <a href="projects.html" class="nav-item">Projects</a>
+          <a href="people.html" class="nav-item">People</a>
+          <a href="portfolios.html" class="nav-item">Portfolios</a>
+        </nav>
+      </aside>
+    </div>
+
+    <div class="right-content">
+
+      <div class="page-head">
+        <div>
+          <h1>Good morning, Aditya</h1>
+          <p class="subtitle">Here is what is happening across your projects</p>
+        </div>
+      </div>
+
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="label">Total tasks</div>
+          <div class="value">24</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">In progress</div>
+          <div class="value accent-blue">7</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Completed</div>
+          <div class="value accent-green">15</div>
+        </div>
+        <div class="metric-card">
+          <div class="label">Overdue</div>
+          <div class="value accent-orange">2</div>
+        </div>
+      </div>
+
+      <div class="dash-grid">
+
+        <div class="panel">
+          <h3>Recent activity</h3>
+          <div class="activity-row">
+            <span class="activity-dot dot-orange"></span>
+            <span>Design login screen moved to In progress</span>
+          </div>
+          <div class="activity-row">
+            <span class="activity-dot dot-green"></span>
+            <span>Set up project repo marked Done</span>
+          </div>
+          <div class="activity-row">
+            <span class="activity-dot dot-blue"></span>
+            <span>New task added to Projects board</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Upcoming deadlines</h3>
+          <div class="deadline-row">
+            <span>Write unit tests</span>
+            <span class="due">Tomorrow</span>
+          </div>
+          <div class="deadline-row">
+            <span>Build API endpoints</span>
+            <span class="due later">In 3 days</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

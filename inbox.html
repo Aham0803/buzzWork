@@ -1,40 +1,91 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <link rel="stylesheet" href="inbox.css" />
-  <body>
-    <header class="header">
-      <div class="left-section">
-        <!-- <span class="hamburger">☰</span> -->
-        <button class="create-btn">Create</button>
-      </div>
-      <div class="search-box">
-        <input type="search" placeholder="Search" />
-      </div>
-      <a href="login2.html" class="login-btn">Login</a>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanban Board</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-    <div class="main-container">
-      <div class="left-dashboard">
-        <aside>
-          <nav class="sidebar-nav">
-            <a href="index.html" class="nav-item active"> Home</a>
-            <a href="inbox.html" class="nav-item"> Inbox</a>
-            <a href="MyTask.html" class="nav-item"> My Tasks</a>
-
-            <div class="nav-section-label">WORKSPACE</div>
-
-            <a class="nav-item"> Dashboard</a>
-            <a class="nav-item"> Projects</a>
-            <a class="nav-item"> People</a>
-            <a class="nav-item"> Portfolios</a>
-          </nav>
-        </aside>
-      </div>
+  <header class="header">
+    <div class="left-section">
+      <button class="create-btn">Create</button>
     </div>
-  </body>
+    <div class="search-box">
+      <input type="search" placeholder="Search" />
+    </div>
+    <a href="login2.html" class="login-btn">Login</a>
+  </header>
+
+  <div class="main-container">
+    <div class="left-dashboard">
+      <aside>
+        <nav class="sidebar-nav">
+          <a href="home.html" class="nav-item">Home</a>
+          <a href="dashboard.html" class="nav-item">Dashboard</a>
+          <a href="inbox.html" class="nav-item active">Kanban Board</a>
+          <a href="MyTask.html" class="nav-item">My Tasks</a>
+
+          <div class="nav-section-label">WORKSPACE</div>
+
+          <a href="projects.html" class="nav-item">Projects</a>
+          <a href="people.html" class="nav-item">People</a>
+          <a href="portfolios.html" class="nav-item">Portfolios</a>
+        </nav>
+      </aside>
+    </div>
+
+    <div class="right-content">
+
+      <div class="page-head">
+        <div>
+          <h1>Project Board</h1>
+          <p class="subtitle">A simple static Kanban layout</p>
+        </div>
+      </div>
+
+      <main class="board">
+
+        <section class="column">
+          <div class="column-head">
+            <span class="dot dot-todo"></span>
+            <h2>To Do</h2>
+            <span class="count">2</span>
+          </div>
+          <div class="cards">
+            <div class="card"><p>Design login screen</p></div>
+            <div class="card"><p>Research competitor pricing</p></div>
+          </div>
+        </section>
+
+        <section class="column">
+          <div class="column-head">
+            <span class="dot dot-progress"></span>
+            <h2>In Progress</h2>
+            <span class="count">2</span>
+          </div>
+          <div class="cards">
+            <div class="card"><p>Build API endpoints</p></div>
+            <div class="card"><p>Write unit tests</p></div>
+          </div>
+        </section>
+
+        <section class="column">
+          <div class="column-head">
+            <span class="dot dot-done"></span>
+            <h2>Done</h2>
+            <span class="count">1</span>
+          </div>
+          <div class="cards">
+            <div class="card"><p>Set up project repo</p></div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+</body>
 </html>

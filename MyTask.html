@@ -1,40 +1,100 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <link rel="stylesheet" href="MyTask.css" />
-  <body>
-    <header class="header">
-      <div class="left-section">
-        <!-- <span class="hamburger">☰</span> -->
-        <button class="create-btn">Create</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Tasks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="left-section">
+      <button class="create-btn">Create</button>
+    </div>
+    <div class="search-box">
+      <input type="search" placeholder="Search" />
+    </div>
+    <a href="login2.html" class="login-btn">Login</a>
+  </header>
+
+  <div class="main-container">
+    <div class="left-dashboard">
+      <aside>
+        <nav class="sidebar-nav">
+          <a href="home.html" class="nav-item">Home</a>
+          <a href="dashboard.html" class="nav-item">Dashboard</a>
+          <a href="inbox.html" class="nav-item">Kanban Board</a>
+          <a href="MyTask.html" class="nav-item active">My Tasks</a>
+
+          <div class="nav-section-label">WORKSPACE</div>
+
+          <a href="projects.html" class="nav-item">Projects</a>
+          <a href="people.html" class="nav-item">People</a>
+          <a href="portfolios.html" class="nav-item">Portfolios</a>
+        </nav>
+      </aside>
+    </div>
+
+    <div class="right-content">
+
+      <div class="page-head">
+        <div>
+          <h1>My Tasks</h1>
+          <p class="subtitle">6 tasks assigned to you</p>
+        </div>
+        <div style="display:flex; gap:8px;">
+          <button class="secondary-btn">Filter</button>
+          <button class="secondary-btn">Sort</button>
+        </div>
       </div>
-      <div class="search-box">
-        <input type="search" placeholder="Search" />
-      </div>
-      <a href="login2.html" class="login-btn">Login</a>
-    </header>
 
-    <div class="main-container">
-      <div class="left-dashboard">
-        <aside>
-          <nav class="sidebar-nav">
-            <a href="index.html" class="nav-item active"> Home</a>
-            <a href="inbox.html" class="nav-item"> Inbox</a>
-            <a href="MyTask.html" class="nav-item"> My Tasks</a>
+      <div class="task-table">
 
-            <div class="nav-section-label">WORKSPACE</div>
+        <div class="table-head">
+          <div>Task</div>
+          <div>Project</div>
+          <div>Due date</div>
+          <div>Status</div>
+        </div>
 
-            <a class="nav-item"> Dashboard</a>
-            <a class="nav-item"> Projects</a>
-            <a class="nav-item"> People</a>
-            <a class="nav-item"> Portfolios</a>
-          </nav>
-        </aside>
+        <div class="table-row">
+          <div class="task-name">Design login screen</div>
+          <div class="task-meta">Website</div>
+          <div class="task-meta">Jun 22</div>
+          <div><span class="badge badge-todo">To do</span></div>
+        </div>
+
+        <div class="table-row">
+          <div class="task-name">Build API endpoints</div>
+          <div class="task-meta">Backend</div>
+          <div class="task-meta">Jun 23</div>
+          <div><span class="badge badge-progress">In progress</span></div>
+        </div>
+
+        <div class="table-row">
+          <div class="task-name">Write unit tests</div>
+          <div class="task-meta">Backend</div>
+          <div class="task-meta">Jun 24</div>
+          <div><span class="badge badge-progress">In progress</span></div>
+        </div>
+
+        <div class="table-row">
+          <div class="task-name">Set up project repo</div>
+          <div class="task-meta">Website</div>
+          <div class="task-meta">Jun 18</div>
+          <div><span class="badge badge-done">Done</span></div>
+        </div>
+
+        <div class="table-row">
+          <div class="task-name">Research competitor pricing</div>
+          <div class="task-meta">Marketing</div>
+          <div class="task-meta">Jun 25</div>
+          <div><span class="badge badge-todo">To do</span></div>
+        </div>
       </div>
     </div>
-  </body>
+  </div>
+
+</body>
 </html>
