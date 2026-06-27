@@ -1,0 +1,249 @@
+/* ===== buzzWork Login CSS — Dashboard Theme Match ===== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #eae8e0;
+  min-height: 100vh;
+}
+
+/* ===== LOGIN SECTION ===== */
+.login-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: #eae8e0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft background blobs matching dashboard beige */
+.login-section::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: rgba(44, 68, 56, 0.06);
+  border-radius: 50%;
+  top: -120px;
+  right: -120px;
+}
+
+.login-section::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: rgba(44, 68, 56, 0.05);
+  border-radius: 50%;
+  bottom: -80px;
+  left: -80px;
+}
+
+/* ===== LOGO ===== */
+.logo-container {
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  z-index: 1;
+}
+
+.logo-text {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2c4438;
+  letter-spacing: -0.5px;
+}
+
+/* ===== LOGIN CARD ===== */
+.login-card {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  border: 1px solid #dddbd2;
+  box-shadow: 0 8px 32px rgba(44, 68, 56, 0.10);
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Dark green top accent — matches navbar */
+.login-card::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background: #2c4438;
+}
+
+.card-body {
+  padding: 2rem 2rem 2.25rem;
+}
+
+/* ===== FORM TITLE ===== */
+.form-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a2e24;
+  margin-bottom: 0.2rem;
+}
+
+.form-subtitle {
+  font-size: 13px;
+  color: #8a9490;
+  margin-bottom: 1.75rem;
+}
+
+/* ===== FORM GROUP ===== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 1.1rem;
+}
+
+/* ===== LABELS ===== */
+.label-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c4438;
+  letter-spacing: 0.01em;
+}
+
+/* ===== INPUT FIELDS ===== */
+.input-field {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  font-size: 14px;
+  font-family: inherit;
+  background: #f4f2eb;
+  border: 1.5px solid #dddbd2;
+  border-radius: 8px;
+  color: #1a2e24;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field::placeholder {
+  color: #b0b5b0;
+}
+
+.input-field:hover {
+  border-color: #b5c2bc;
+  background: #efede5;
+}
+
+.input-field:focus {
+  border-color: #2c4438;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(44, 68, 56, 0.10);
+}
+
+/* ===== FORGOT PASSWORD ===== */
+.forgot-link {
+  text-align: right;
+  margin-top: -4px;
+  margin-bottom: 1.4rem;
+}
+
+.forgot-link a {
+  font-size: 12px;
+  color: #c96a2a;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.forgot-link a:hover {
+  color: #a8531d;
+  text-decoration: underline;
+}
+
+/* ===== SUBMIT BUTTON ===== */
+.btn-primary {
+  width: 100%;
+  height: 48px;
+  background: #c96a2a;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(201, 106, 42, 0.30);
+}
+
+.btn-primary:hover {
+  background: #a8531d;
+  box-shadow: 0 6px 18px rgba(201, 106, 42, 0.38);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 8px rgba(201, 106, 42, 0.20);
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 1.4rem 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background: #dddbd2;
+}
+
+.divider-text {
+  font-size: 12px;
+  color: #b0b5b0;
+  font-weight: 500;
+}
+
+/* ===== SIGN UP TEXT ===== */
+.signup-text {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 1.25rem;
+}
+
+.signup-text a {
+  color: #2c4438;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.signup-text a:hover {
+  color: #1a2e24;
+  text-decoration: underline;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .card-body {
+    padding: 1.5rem 1.25rem 1.75rem;
+  }
+  .form-title {
+    font-size: 20px;
+  }
+  .btn-primary {
+    height: 44px;
+    font-size: 14px;
+  }
+}
