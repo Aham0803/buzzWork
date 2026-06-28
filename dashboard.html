@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="modal.css">
 </head>
-<body>
-
   <header class="header">
     <div class="left-section">
       <button class="create-btn">Create</button>
@@ -15,7 +14,6 @@
     <div class="search-box">
       <input type="search" placeholder="Search" />
     </div>
-    <a href="login2.html" class="login-btn">Login</a>
   </header>
 
   <div class="main-container">
@@ -98,6 +96,33 @@
 
     </div>
   </div>
+
+<!-- Modal -->
+    <div id="taskModal">
+      <div class="modal-box">
+        <h2>Add Task</h2>
+
+        <label class="modal-label">Task Name</label>
+        <input type="text" id="taskName" placeholder="Enter task name" class="modal-input">
+
+        <label class="modal-label">Due Date</label>
+        <input type="date" id="taskDate" class="modal-input">
+
+        <label class="modal-label">Status</label>
+        <select id="taskStatus" class="modal-input">
+          <option>To Do</option>
+          <option>In Progress</option>
+          <option>Done</option>
+        </select>
+
+        <div class="modal-btn-group">
+          <button id="saveBtn" class="btn-save">Save Task</button>
+          <button id="closeBtn" class="btn-cancel">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="modal.js"></script>
 
 </body>
 </html>
