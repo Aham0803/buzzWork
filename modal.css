@@ -1,4 +1,4 @@
-#taskModal {
+/* #taskModal {
   display: none;
   position: fixed;
   top: 0;
@@ -7,9 +7,10 @@
   height: 100%;
   background: rgba(0,0,0,0.5);
   z-index: 1000;
-}
+} */
 
 .modal-box {
+  border: 2px dashed orange;
   background: #fff;
   width: 400px;
   border-radius: 12px;
